@@ -61,7 +61,27 @@ static inline long sync_writeback_pages(unsigned long dirtied)
 /*
  * Start background writeback (via writeback threads) at this percentage
  */
-int dirty_background_ratio = 10;
+#ifndef CONFIG_DIRTY_TWENTY
+#ifndef CONFIG_DIRTY_THIRTY
+#ifndef CONFIG_DIRTY_FOURTY
+  int dirty_background_ratio = 10;
+#endif
+#endif
+#endif
+
+
+#ifdef CONFIG_DIRTY_TWENTY
+  int dirty_background_ratio = 20;
+#endif
+  
+#ifdef CONFIG_DIRTY_THIRTY
+  int dirty_background_ratio = 30;
+#endif
+
+#ifdef CONFIG_DIRTY_FOURTY
+  int dirty_background_ratio = 40;
+#endif
+
 
 /*
  * dirty_background_bytes starts at 0 (disabled) so that it is a function of
@@ -78,8 +98,27 @@ int vm_highmem_is_dirtyable;
 /*
  * The generator of dirty data starts writeback at this percentage
  */
-int vm_dirty_ratio = 20;
 
+#ifndef CONFIG_RDIRTY_FOURTY
+#ifndef CONFIG_RDIRTY_SIXTY
+#ifndef CONFIG_RDIRTY_EIGHTY
+  int vm_dirty_ratio = 20;
+#endif
+#endif
+#endif
+
+
+#ifdef CONFIG_RDIRTY_FOURTY
+  int vm_dirty_ratio = 40;
+#endif
+
+#ifdef CONFIG_RDIRTY_SIXTY
+  int vm_dirty_ratio = 60;
+#endif
+  
+#ifdef CONFIG_RDIRTY_EIGHTY
+  int vm_dirty_ratio = 80;
+#endif
 /*
  * vm_dirty_bytes starts at 0 (disabled) so that it is a function of
  * vm_dirty_ratio * the amount of dirtyable memory
@@ -89,7 +128,7 @@ unsigned long vm_dirty_bytes;
 /*
  * The interval between `kupdate'-style writebacks
  */
-unsigned int dirty_writeback_interval = 5 * 100; /* centiseconds */
+unsigned int dirty_writeback_interval = 20 * 100; /* centiseconds */
 
 /*
  * The longest time for which data is allowed to remain dirty
