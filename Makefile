@@ -194,8 +194,18 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 export KBUILD_BUILDHOST := $(SUBARCH)
 ARCH		?= arm
 
-# Google NDK GCC 4.3.3
-CROSS_COMPILE	?= ../toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+
+# TOOLCHAINS - choose your preferred toolchain, extract it within a folder called
+# "toolchain" in your kernel build folder
+
+# Google NDK GCC 4.4.3 toolchain
+# CROSS_COMPILE	?= ../toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+
+# Codesourcery (mentor graphics) GCC 2012.09 toolchain
+CROSS_COMPILE	?= ../toolchain/arm-2012.09/bin/arm-none-eabi-
+
+# Linaro 12.11 GCC 4.7.3 toolchain
+# CROSS_COMPILE	?= ../toolchain/android-toolchain-eabi/bin/arm-linux-androideabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
