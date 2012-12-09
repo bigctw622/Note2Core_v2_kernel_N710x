@@ -7,8 +7,6 @@
 # ccflags-y := -DDEBUG
 # asflags-y := -DDEBUG
 
-0 	
-
 # switch to neon hard float libraries
 # gcc documentation requires -funsafe-math-optimisations to be specified on the primary makefile KBUILD_CFLAGS parameters list
 # to be effective
