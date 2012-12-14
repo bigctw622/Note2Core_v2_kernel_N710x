@@ -7,10 +7,10 @@
 # ccflags-y := -DDEBUG
 # asflags-y := -DDEBUG
 
-# switch to neon hard float libraries
+# switch to vfp hard float libraries
 # gcc documentation requires -funsafe-math-optimisations to be specified on the primary makefile KBUILD_CFLAGS parameters list
 # to be effective
-KBUILD_AFLAGS  :=$(KBUILD_AFLAGS:-mhard-float=-Wa,-mfpu=neon)
+KBUILD_AFLAGS  :=$(KBUILD_AFLAGS:-mhard-float=-Wa,-mfpu=vfpv3)
 LDFLAGS		+=--no-warn-mismatch
 
 obj-y			+= vfp.o
