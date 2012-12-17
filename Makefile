@@ -201,11 +201,11 @@ ARCH		?= arm
 # Google NDK GCC 4.4.3 toolchain
 # CROSS_COMPILE	?= ../toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 
-# Codesourcery (mentor graphics) GCC 4.7 2012.09 toolchain
-# CROSS_COMPILE	?= ../toolchain/arm-2012.09/bin/arm-none-eabi-
+# Codesourcery (mentor graphics) GCC 2012.09 toolchain
+CROSS_COMPILE	?= ../toolchain/arm-2012.09/bin/arm-none-eabi-
 
 # Linaro 12.11 GCC 4.7.3 toolchain
-CROSS_COMPILE	?= ../toolchain/android-toolchain-eabi/bin/arm-linux-androideabi-
+# CROSS_COMPILE	?= ../toolchain/android-toolchain-eabi/bin/arm-linux-androideabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -385,7 +385,7 @@ KBUILD_CFLAGS   := -Wundef                                \
 		   -fno-strict-aliasing                   \
 		   -fno-delete-null-pointer-checks        \
 		   -mcpu=cortex-a9                        \
-		   -mfpu=vfpv3                            \
+		   -mfpu=neon                             \
 		   -funsafe-math-optimizations            \
 		   -ffast-math                            \
 		   -marm                                  \
