@@ -28,7 +28,7 @@
 #include <linux/workqueue.h>
 
 #define MAX_MALI_DVFS_STEPS 5
-#define MALI_DVFS_WATING 10 // msec
+#define MALI_DVFS_WATING 1 // msec
 
 #ifdef CONFIG_CPU_FREQ
 #include <mach/asv.h>
@@ -112,23 +112,23 @@ int step0_vol = 875000;
 #if (MALI_DVFS_STEPS > 1)
 int step1_clk = 350;
 int step1_vol = 900000;
-int step0_up = 45;
-int step1_down = 50;
+int step0_up = 20;
+int step1_down = 15;
 #if (MALI_DVFS_STEPS > 2)
 int step2_clk = 440;
 int step2_vol = 950000;
-int step1_up = 65;
-int step2_down = 60;
+int step1_up = 35;
+int step2_down = 30;
 #if (MALI_DVFS_STEPS > 3)
 int step3_clk = 533;
 int step3_vol = 1025000;
-int step2_up = 75;
-int step3_down = 70;
+int step2_up = 55;
+int step3_down = 50;
 #if (MALI_DVFS_STEPS > 4)
 int step4_clk = 640;
 int step4_vol = 1075000;
-int step3_up = 85;
-int step4_down = 80;
+int step3_up = 75;
+int step4_down = 70;
 #endif
 #endif
 #endif
@@ -158,15 +158,15 @@ mali_dvfs_table mali_dvfs[MALI_DVFS_STEPS]={
 };
 
 mali_dvfs_threshold_table mali_dvfs_threshold[MALI_DVFS_STEPS]={
-	{0   , 45},
+	{0   , 19},
 #if (MALI_DVFS_STEPS > 1)
-	{40  , 65},
+	{20  , 34},
 #if (MALI_DVFS_STEPS > 2)
-	{60  , 75},
+	{35  , 54},
 #if (MALI_DVFS_STEPS > 3)
-	{70  ,85},
+	{55  ,74},
 #if (MALI_DVFS_STEPS > 4)
-	{80  ,100}
+	{75  ,100}
 #endif
 #endif
 #endif
