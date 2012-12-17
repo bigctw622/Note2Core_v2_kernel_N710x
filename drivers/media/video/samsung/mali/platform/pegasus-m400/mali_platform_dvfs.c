@@ -112,23 +112,23 @@ int step0_vol = 875000;
 #if (MALI_DVFS_STEPS > 1)
 int step1_clk = 350;
 int step1_vol = 900000;
-int step0_up = 25;
-int step1_down = 24;
+int step0_up = 45;
+int step1_down = 50;
 #if (MALI_DVFS_STEPS > 2)
 int step2_clk = 440;
 int step2_vol = 950000;
-int step1_up = 45;
-int step2_down = 44;
+int step1_up = 65;
+int step2_down = 60;
 #if (MALI_DVFS_STEPS > 3)
 int step3_clk = 533;
 int step3_vol = 1025000;
-int step2_up = 55;
-int step3_down = 54;
+int step2_up = 75;
+int step3_down = 70;
 #if (MALI_DVFS_STEPS > 4)
 int step4_clk = 640;
 int step4_vol = 1075000;
-int step3_up = 65;
-int step4_down = 64;
+int step3_up = 85;
+int step4_down = 80;
 #endif
 #endif
 #endif
@@ -158,15 +158,15 @@ mali_dvfs_table mali_dvfs[MALI_DVFS_STEPS]={
 };
 
 mali_dvfs_threshold_table mali_dvfs_threshold[MALI_DVFS_STEPS]={
-	{0   , 24},
+	{0   , 45},
 #if (MALI_DVFS_STEPS > 1)
-	{25  , 44},
+	{40  , 65},
 #if (MALI_DVFS_STEPS > 2)
-	{45  , 54},
+	{60  , 75},
 #if (MALI_DVFS_STEPS > 3)
-	{55  ,64},
+	{70  ,85},
 #if (MALI_DVFS_STEPS > 4)
-	{65  ,100}
+	{80  ,100}
 #endif
 #endif
 #endif
