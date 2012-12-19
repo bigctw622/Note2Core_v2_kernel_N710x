@@ -65,6 +65,10 @@ config FSYNC_OFF
       Disable the FSync() file system command.  This will improve IO performance
       at the cost of a small risk to data integrity
 
+config MALI_CPU_LOCK_OFF
+    bool "Disable MALI GPU cpu lock feature"
+    help
+      Disable the MALI GPU CPU frequency locks for a more responsive system
 
 config CC_NOWARN
     bool "Supress all compilation warnings"
