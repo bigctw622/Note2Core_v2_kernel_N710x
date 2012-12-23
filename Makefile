@@ -391,8 +391,7 @@ KBUILD_CFLAGS   := -Wundef                                \
 		   -funsafe-math-optimizations            \
 		   -ffast-math                            \
 		   -marm                                  \
-		   -march=armv7-a                         \
-		   -pipe
+		   -march=armv7-a
    
 
 KBUILD_AFLAGS_KERNEL :=
